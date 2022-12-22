@@ -33,6 +33,16 @@ const common = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
+      {
+        test: /\.js/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/env', '@babel/react'],
+          },
+        },
+      },
+
       // Check for images imported in .js files and
       {
         test: IMAGE_TYPES,
